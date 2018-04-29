@@ -1,4 +1,5 @@
 var express = require("express");
+var path = require('path');
 var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
@@ -11,6 +12,7 @@ var COLLECTION = "url_shortener";
 var COUNTER = "counter";
 
 app.use(bodyParser.json());
+app.use(express.static( path.join(__dirname, 'public')));
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in app.
 var db;
@@ -86,6 +88,11 @@ function shortify(host, res, url) {
     });
 }
 
+// Route for index.
+app.get('/', function(req, res) {
+    res.render('index.html');
+});
+
 // Route for shortification request (ie : http://host/short/http://www.google.fr)
 app.get("/short/:protocol://:url", function(req, res) {
     var url = req.params.protocol + "://" + req.params.url;
@@ -129,4 +136,8 @@ app.get('/:shortUrl(\\d+)', function(req, res) {
             }
         }
     });
+});
+
+app.use(function(req, res) {
+    res.status(404).end('This url is not allowed ;)');
 });

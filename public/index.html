@@ -1,0 +1,87 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            URL Shortener Microservice
+        </title>
+        <meta content="URL Shortener Microservice" name="description"/>
+        <meta content="wbecker64" name="author"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet prefetch"/>
+    </head>
+</html>
+<body>
+    <div class="container-fluid">
+        <img alt="My Face" src="https://en.gravatar.com/userimage/134282536/07a90f32825b28ca244f6000514c5bb6.jpg?size=200"/>
+        <p>
+            <a href="mailto:wbecker64@gmail.com">
+                <i class="fa fa-envelope fa-fw">
+                </i>
+            </a>
+            <a href="https://github.com/wbecker64" target="_blank">
+                <i class="fa fa-github fa-fw">
+                </i>
+            </a>
+            <a href="https://www.linkedin.com/in/william-becker-151b102/" target="_blank">
+                <i class="fa fa-linkedin">
+                </i>
+            </a>
+            <a href="http://codepen.io/wbecker64" target="_blank">
+                <i class="fa fa-codepen">
+                </i>
+            </a>
+            <a href="http://www.freecodecamp.com/wbecker64" target="_blank">
+                <i class="fa fa-fire fa-fw">
+                </i>
+            </a>
+        </p>
+        <p>
+            Created by William Becker (wbecker64).
+        </p>
+        <h1 class="header">
+            FreeCodeCamp : URL Shortener Microservice
+        </h1>
+        <blockquote>
+            <p>
+                User stories:
+            </p>
+            <ul>
+                <li>
+                    I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+                </li>
+                <li>
+                    When I visit that shortened URL, it will redirect me to my original link.
+                </li>
+            </ul>
+        </blockquote>
+    </div>
+</body>
+<h3>
+    Example creation usage:
+</h3>
+<code>
+    https://shortenificator.herokuapp.com/short/https://www.google.com
+</code>
+<br/>
+<h3>
+    Example creation output:
+</h3>
+<code>
+    {
+  "original_url":"https://www.google.com",
+  "short_url":"https://shortenificator.herokuapp.com/1234"
+}
+</code>
+<h3>
+    Usage:
+</h3>
+<code>
+    https://shortenificator.herokuapp.com/1234
+</code>
+<h3>
+    Will redirect to:
+</h3>
+<code>
+    https://www.google.com/
+</code>
